@@ -12,7 +12,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"deploy": "gh-pages -d build -t"
+		"deploy": "node ./gh-pages.js -d build -t"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",
@@ -22,6 +22,7 @@
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/vite": "^4.1.14",
 		"@types/node": "^22",
+		"daisyui": "^5.5.0",
 		"eslint": "^9.38.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.12.4",
@@ -36,5 +37,8 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.46.1",
 		"vite": "^7.1.10"
+	},
+	"dependencies": {
+		"svelte-feather-icons": "^4.2.0"
 	}
 }
