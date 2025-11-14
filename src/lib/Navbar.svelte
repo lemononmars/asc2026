@@ -1,8 +1,14 @@
 <script lang=ts>
+   import {resolve} from '$app/paths'
    import {Logo} from '$lib/index.ts'
 	import { MenuIcon } from 'svelte-feather-icons';
-   const menus = ['Top', 'Info', 'Register','Schedule','Booklet', 'Contact']
-   const ids = ['top', 'info', 'register', 'schedule','ib', 'contact']
+   const menus = ['Top', 'Info', 'Register',
+   //'Schedule','Booklet', 
+   'Contact']
+   const ids = ['top', 'info', 'register', 
+   //'schedule','ib', 
+   'contact']
+
 
    const scrollSection = (id: string) => {
 		const element = document.getElementById(id);
@@ -14,14 +20,14 @@
 
 <div class="navbar w-screen hidden lg:flex bg-accent h-10">
    <div class="navbar-start">
-      <a href="/">
+      <a href="{resolve("/")}">
          <img class="h-12 aspect-square" src={Logo} alt="logo">
       </a>
    </div>
    <div class="navbar-center gap-8">
       {#each menus as _, idx}
          <a href="#{ids[idx]}" on:click|preventDefault={() => scrollSection(ids[idx])}>
-            <p class="text-accent-content hover:animate-bounce transition-transform">{menus[idx]}</p>
+            <p class="text-accent-content hover:scale-150 transition-transform">{menus[idx]}</p>
          </a>
       {/each}
    </div>
@@ -32,7 +38,7 @@
 <!-- hamburger nav bar for mobile-->
 <div class="navbar w-screen lg:hidden bg-success-content h-16">
    <div class="navbar-start">
-      <a href="/">
+      <a href="{resolve("/")}">
          <img class="h-12 aspect-square" src={Logo} alt="logo">
       </a>
    </div>
